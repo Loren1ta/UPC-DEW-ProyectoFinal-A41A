@@ -18,7 +18,7 @@ Twitter: Los usuarios pueden autenticarse mediante la red social. Ademas de pode
 | Scrumy                  | <a href="http://scrumy.com/poor17immoral" target="_blank">Proyecto en Scrumy</a> |
 | Historias de Ususario   | <a href="https://docs.google.com/spreadsheet/pub?key=0Ah28s0oOkHH-dGpQRmc3NzM1c1R1WF9wLVA2a29xWWc&gid=1" target="_blank">Google Drive</a> |
 | Backlog                 | <a href="https://docs.google.com/spreadsheet/pub?key=0Ah28s0oOkHH-dGpQRmc3NzM1c1R1WF9wLVA2a29xWWc&gid=2" target="_blank">Google Drive</a> | 
-| Documentacion           | <a href="https://github.com/mrosalesdiaz/UPC-DEW-ProyectoFinal-A41A/wiki" target="_blank">Wiki</a>|
+| Documentacion           | <a href="https://github.com/mrosalesdiaz/UPC-DEW-ProyectoFinal-A41A/wiki" target="_self">Wiki</a>|
 | **Demo**              | <a href="http://www.baikensoft.com" target="_blank">Demo Web</a>|
 | Actas de Reunion        | <a href="https://docs.google.com/document/d/1U0wz1o80u0QNerGWrDsjxzml-mNGjItqUo53M7xxzTc/pub" target="_blank">Google Drive</a>|
 
