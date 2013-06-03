@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Typedocum:</b>
+  <%= @user.typeDocum %>
+</p>
+
+<p>
+  <b>Numdocum:</b>
+  <%= @user.numDocum %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @user.firstName %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @user.lastName %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%= @user.sex %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

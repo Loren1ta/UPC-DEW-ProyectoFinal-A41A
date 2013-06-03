@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dateIni: MyString
+  dateFin: MyString
+  state: MyString
+  score: 1
+
+two:
+  dateIni: MyString
+  dateFin: MyString
+  state: MyString
+  score: 1
