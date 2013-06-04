@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  password: MyString
   typeDocum: MyString
   numDocum: MyString
   firstName: MyString
@@ -10,6 +11,7 @@ one:
   email: MyString
 
 two:
+  password: MyString
   typeDocum: MyString
   numDocum: MyString
   firstName: MyString

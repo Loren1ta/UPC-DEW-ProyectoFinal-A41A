@@ -1,1 +1,50 @@
-Index
+<body>
+    <div id="main">
+        <div id="container">
+            <div id="container_blob">
+                <div id="column">
+                    <div class="column" id="column_1">
+
+                        <div class="row" id="row_1">
+                          <div class="div_supuesto">
+
+                          </div>
+                        </div>
+
+                        <div class="row" id="row_2">
+                            <h1>Bienvenido a Social Music.</h1>
+                            <p>Descubre lo que está pasando ahora, con tus grupos y conciertos que te interesan</p>
+
+                            <div id="social">
+                                <div class="inset">
+                                    <%= link_to "Twitter" , class:"tw logo_button" do  %>
+                                        <div class="logo_wrap">
+                                            <span class="logo"></span>
+                                        </div>
+                                        <span>Entrar con Twitter</span>
+                                    <% end %>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="column_2">
+                        <div class="front-signin js-front-signin" id="row_3">
+                            <%= render 'users/logeo' %>
+                        </div>
+                        <div class="front-signup js-front-signup" id="row_4">
+                            <h2>
+                                <strong>¿Eres nuevo en Social Music?</strong>
+                                "Registrate"
+                            </h2>
+                            <%= render 'users/login' %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+        </footer>
+    </div>
+</body>

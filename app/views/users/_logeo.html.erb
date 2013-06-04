@@ -1,0 +1,30 @@
+<%= form_for(@user , class:"signin")   do |f| %>
+    <div class="placeholding-input">
+      <%= f.text_field :email , class:"text-input username", autocomplete:"off" , placeholder:"Correo electronico"  %>
+    </div>
+    <table class="flex-table password-signin">
+      <tr>
+        <td class="flex-table-primary">
+          <div class="placeholding-input">
+            <%= f.text_field :password , class:"text-input", autocomplete:"off" , placeholder:"Contraseña"  %>
+          </div>
+        </td>
+        <td class="flex-table-secondary">
+          <button type="submit" class="submit btn primary-btn flex-table-btn js-submit">
+            Iniciar sesión
+          </button>
+        </td>
+      </tr>
+    </table>
+    <div class="remember-forgot">
+      <label class="remember">
+        <input type="checkbox" name="remember_me"  checked="checked">
+        <span>Recordar mis datos</span>
+      </label>
+      <span class="separator"> - </span>
+      <%= link_to "olvidastes" , class:"forgot" do  %>
+          ¿Olvidaste tu contraseña?
+      <% end %>
+
+    </div>
+<% end %>
