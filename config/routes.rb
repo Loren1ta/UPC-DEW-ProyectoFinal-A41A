@@ -1,8 +1,8 @@
 Ising::Application.routes.draw do
 
-  get 'welcome/index'
-
   root :to => 'welcome#index'
+
+
 
   resources :concerts
 
@@ -15,8 +15,14 @@ Ising::Application.routes.draw do
 
   resources :type_people
 
-
   resources :users
+
+  resources :welcome
+
+  match "public/groups" => "welcome#groups"
+  match "public/concerts" => "welcome#concerts"
+  match "public/locals" => "welcome#locals"
+  match "public/aboutus" => "welcome#aboutus"
 
 
   # The priority is based upon order of creation:
