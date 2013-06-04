@@ -1,0 +1,226 @@
+#container_success{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+
+  header{
+    position: relative;
+    width: 100%;
+    height: 40px;
+
+    border-color: #000;
+    background-color: #2d2d2d;
+    opacity: 1;
+
+  }
+
+  #row{
+    width: 1020px;
+    height: 500px;
+    margin: 0 auto;
+
+    #column_1{
+      width:220px;
+      position: relative;
+      float: left;
+      padding-top: 10px;
+      margin: 0;
+
+      #user{
+        display: block;
+        height: 50px;
+        width: 220px;
+        #img{
+          position: relative;
+          float: left;
+          margin-right: 8px;
+        }
+
+        #firstName{
+          position: relative;
+          float: left;
+          text-align: center;
+          line-height: 18px;
+          font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+          font-size: 11px;
+          color: #3b5998;
+          cursor: pointer;
+          text-decoration: none;
+        }
+
+      }
+
+      #grupos{
+
+        #title{
+          font-weight: 700;
+          text-align: left;
+          margin: 5px;
+        }
+
+        ul.lista {
+          list-style: none;
+          margin: 0;
+          margin-top: 10px;
+          padding: 0;
+          width: 180px;
+        }
+
+        ul.lista li {
+          background: #FFF;
+          border: 1px dotted #7C7C7C;
+          margin: 4px 0;
+        }
+
+        ul.lista li a {
+          color: #333;
+          display: block;
+          padding: .2em 0 .2em .5em;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        ul.lista li a:hover {
+          color: #333;
+          display: block;
+          padding: .2em 0 .2em .5em;
+          text-decoration: none;
+          background-color: #F4F4F4;
+        }
+      }
+
+      #app{
+        #title{
+          font-weight: 700;
+          text-align: left;
+          margin: 5px;
+        }
+        ul.apps{
+          list-style: none;
+          margin: 0;
+          margin-top: 10px;
+          padding: 0;
+          width: 180px;
+        }
+
+        ul.apps li{
+          background: #FFF;
+          border: 1px dotted #7C7C7C;
+          margin: 4px 0;
+        }
+
+        ul.apps li a{
+          color: #333;
+          display: block;
+          padding: .2em 0 .2em .5em;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        ul.apps li a:hover{
+          color: #333;
+          display: block;
+          padding: .2em 0 .2em .5em;
+          text-decoration: none;
+          background-color: #F4F4F4
+        }
+      }
+
+
+    }
+
+    #column_2{
+      width:580px;
+      position: relative;
+      float: left;
+      border-left: 1px solid #cccccc;
+      border-right: 1px solid #cccccc;
+      padding-top: 10px;
+      margin: 0;
+
+      .content{
+        margin: 10px;
+        border: 1px solid #000;
+        height: 250px;
+
+        #title_concert{
+          padding: 5px 0;
+          font-weight: bold;
+          font-size: 14px;
+          background: #ccc;
+          color: #3b5998;
+          text-align: center;
+          border-bottom: 1px solid ;
+        }
+
+        #img{
+          position: relative;
+
+          .asistir{
+            position: absolute;
+            left: 480px;
+            top: 8px;
+            border: 1px solid #057ed0;
+            background: #12abdd;
+            padding: 8px;
+            color: #fff;
+          }
+
+          a{
+            color: #fff;
+            cursor: pointer;
+          }
+
+          a:hover{
+            color: #fff;
+            background: #057ed0;
+            display: block;
+          }
+
+
+        }
+      }
+
+    }
+
+    #column_3{
+      width:200px;
+      position: relative;
+      float: left;
+      padding-top: 10px;
+      margin: 0;
+      height: 100%;
+
+      ul{
+        list-style: none;
+        margin-left: 4px;
+        margin-top: 10px;
+        padding: 0;
+        width: 215px;
+      }
+
+      ul li{
+        background: #FFF;
+        border: 1px solid #7C7C7C;
+        margin: 4px 0;
+      }
+
+      ul li a{
+        color: #333;
+        display: block;
+        padding: .2em 0 .2em .5em;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      ul li a:hover{
+        color: #333;
+        display: block;
+        padding: .2em 0 .2em .5em;
+        text-decoration: none;
+        background-color: #FFF
+      }
+    }
+  }
+}

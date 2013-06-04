@@ -1,45 +1,125 @@
-<p id="notice"><%= notice %></p>
+<div id="container_success">
+  <header>
 
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
+  </header>
 
-<p>
-  <b>Typedocum:</b>
-  <%= @user.typeDocum %>
-</p>
+  <div id="row">
+    <div id="column_1">
+      <div id="user">
+        <div id="img">
+          <img src="" alt="IMG" height="40px" width="40px" />
+        </div>
+        <div id="firstName">
+            <%= @user.firstName %> <%= @user.lastName %> <%= @user.name %>
+        </div>
+      </div>
+      <div id="grupos">
+        <div id="title">
+          Grupos Favoritos
+        </div>
+        <ul class="lista">
+            <li class="grupo"><a>Grupo 1</a></li>
+            <li class="grupo"><a>Grupo 2</a></li>
+            <li class="grupo"><a>Grupo 3</a></li>
+        </ul>
+      </div>
 
-<p>
-  <b>Numdocum:</b>
-  <%= @user.numDocum %>
-</p>
+      <div id="app">
+        <div id="title">
+          Aplicaciones
+        </div>
+        <ul class="apps">
+          <li class="app"><a>Aplicacion 1</a></li>
+          <li class="app"><a>Aplicacion 2</a></li>
+          <li class="app"><a>Aplicacion 3</a></li>
+        </ul>
+      </div>
+    </div>
 
-<p>
-  <b>Firstname:</b>
-  <%= @user.firstName %>
-</p>
+    <div id="column_2">
+        <div class="content">
+            <div id="title_concert">
+                Concierto TragoKorto En la Playa 2013
+            </div>
+            <div id="dates">
+                <table style="width: 100%; background: #F4F4F4">
+                  <tr style="border-bottom: 1px solid;">
+                    <td style="width:  120px; font-size: 10px; font-weight:bold; text-align: right;">
+                        Direccion:
+                    </td>
+                    <td style="font-size: 9px;">
+                        St 3 Gp 3 Mz J Lt 25
+                    </td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid;">
+                    <td style="width: 120px; font-size: 10px; text-align: right; font-weight:bold;">
+                        Fecha y Hora:
+                    </td>
+                    <td style="font-size: 9px;">
+                        15/06 a las 4:00 P.M.
+                    </td>
+                  </tr>
+                </table>
+            </div>
+            <div id="img" style="height: 180px; width: 558px">
+                <img src="/assets/concierto-1.png" alt="" height=180px width=558px  />
+                <div class="asistir">
+                    <a>Asistiré</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+          <div id="title_concert">
+            Rock Peruano 2013
+          </div>
+          <div id="dates">
+            <table style="width: 100%; background: #F4F4F4">
+              <tr style="border-bottom: 1px solid;">
+                <td style="width:  120px; font-size: 10px; font-weight:bold; text-align: right;">
+                  Direccion:
+                </td>
+                <td style="font-size: 9px;">
+                  Av. Larco N° 493
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px solid;">
+                <td style="width: 120px; font-size: 10px; text-align: right; font-weight:bold;">
+                  Fecha y Hora:
+                </td>
+                <td style="font-size: 9px;">
+                  25/06 a las 8:00 P.M.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="img" style="height: 180px; width: 558px">
+            <img src="/assets/concierto-2.png" alt="" height=180px width=558px  />
+            <div class="asistir">
+              <a>Asistiré</a>
+            </div>
+          </div>
+        </div>
+    </div>
 
-<p>
-  <b>Lastname:</b>
-  <%= @user.lastName %>
-</p>
+    <div id="column_3">
+        <div id="public">
+          <ul>
+            <li>
+              <a>
+                <img src="/assets/auspiciadores-1.png" />
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src="/assets/auspiciadores-2.png" />
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+  <footer>
 
-<p>
-  <b>Sex:</b>
-  <%= @user.sex %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  </footer>
+</div>
