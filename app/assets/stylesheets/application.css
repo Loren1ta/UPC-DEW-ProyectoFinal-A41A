@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+ .admin-link{
+  float: right !important;
+ }
+
+tr th, tr text-decoration: {
+  border: 1px solid #ccc;
+}
