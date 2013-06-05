@@ -32,7 +32,7 @@ Twitter: Los usuarios pueden autenticarse mediante la red social. Ademas de pode
 | Max Rosales   | mrosalesdiaz@gmail.com  | mrosalesdiaz   | u921202        |
 | ~~Lorena Robles~~ | ~~loren9388@gmail.com~~     | ~~Loren1ta~~       |                |
 | C&eacute;sar Illesca | xesar.miguel@gmail.com  |  xesar-miguel  |                |
-| Carolina Garc&iacute;a Ruiz | carolina.garru@gmail.com  | escarogar | u201000149 |
+| ~~Carolina Garc&iacute;a Ruiz~~ | ~~carolina.garru@gmail.com~~  | ~~escarogar~~ | ~~u201000149~~ |
 
 
 
