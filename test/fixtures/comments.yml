@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  id_comment_pater: 1
-  comment: MyText
+  content: MyText
+  user: 
+  concert: 
 
 two:
-  id_comment_pater: 1
-  comment: MyText
+  content: MyText
+  user: 
+  concert: 

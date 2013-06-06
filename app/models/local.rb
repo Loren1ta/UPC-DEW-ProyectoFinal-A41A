@@ -1,3 +1,3 @@
 class Local < ActiveRecord::Base
-  attr_accessible :address, :addressGoogleMap, :district, :longitude, :nameLocal, :phone, :state
+  attr_accessible :address, :description, :district, :geolocation, :name, :phone
 end

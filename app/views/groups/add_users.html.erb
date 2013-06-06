@@ -1,0 +1,8 @@
+<%= simple_form_for(@group) do |f| %>
+  <%= f.association :users, collection: @users, prompt: "Choose a Company", :as => "check_boxes",label_method: :givenname, value_method: :id  %>
+
+
+  <%= f.button :submit %>
+<% end %>
+
+

@@ -1,7 +1,6 @@
 Ising::Application.routes.draw do
 
-  root :to => 'welcome#index'
-
+  resources :comments
 
 
   resources :concerts
@@ -10,13 +9,25 @@ Ising::Application.routes.draw do
   resources :locals
 
 
-  resources :groups
+  resources :group_users
 
-
-  resources :type_people
+  resources :groups do
+    member do
+      get "add_users"
+    end
+  end
 
   resources :users
 
+
+  resources :user_types
+
+
+  root :to => 'welcome#index'
+
+
+
+  resources :type_people
   resources :welcome
 
   match "public/groups" => "welcome#groups"

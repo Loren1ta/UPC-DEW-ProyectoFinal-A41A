@@ -1,5 +1,4 @@
 class ConcertsController < ApplicationController
-  layout "private"
   # GET /concerts
   # GET /concerts.json
   def index

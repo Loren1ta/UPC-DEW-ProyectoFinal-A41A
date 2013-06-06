@@ -2,13 +2,12 @@
 
 <table>
   <tr>
-    <th>Typedocum</th>
-    <th>Numdocum</th>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Name</th>
-    <th>Sex</th>
+    <th>Givenname</th>
+    <th>Lastname1</th>
+    <th>Lastname2</th>
+    <th>Gender</th>
     <th>Email</th>
+    <th>User type</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,13 +15,12 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.typeDocum %></td>
-    <td><%= user.numDocum %></td>
-    <td><%= user.firstName %></td>
-    <td><%= user.lastName %></td>
-    <td><%= user.name %></td>
-    <td><%= user.sex %></td>
+    <td><%= user.givenname %></td>
+    <td><%= user.lastname1 %></td>
+    <td><%= user.lastname2 %></td>
+    <td><%= user.gender %></td>
     <td><%= user.email %></td>
+    <td><%= user.user_type.name %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

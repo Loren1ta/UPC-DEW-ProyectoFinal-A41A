@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-  layout "private"
   # GET /groups
   # GET /groups.json
   def index
@@ -8,6 +7,17 @@ class GroupsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @groups }
+    end
+  end
+
+  def add_users
+    @group = Group.find(params[:id])
+    user_type_id =  UserType.select("id").where(:name => 'Alumno').first.id
+    @users = User.where(:user_type_id => user_type_id)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @group }
     end
   end
 

@@ -1,19 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  typeDocum: MyString
-  numDocum: MyString
-  firstName: MyString
-  lastName: MyString
-  name: MyString
-  sex: MyString
+  givenname: MyString
+  lastname1: MyString
+  lastname2: MyString
+  gender: MyString
   email: MyString
+  user_type: 
 
 two:
-  typeDocum: MyString
-  numDocum: MyString
-  firstName: MyString
-  lastName: MyString
-  name: MyString
-  sex: MyString
+  givenname: MyString
+  lastname1: MyString
+  lastname2: MyString
+  gender: MyString
   email: MyString
+  user_type: 

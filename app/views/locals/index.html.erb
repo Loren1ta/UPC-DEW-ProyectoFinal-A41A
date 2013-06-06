@@ -2,13 +2,12 @@
 
 <table>
   <tr>
-    <th>Namelocal</th>
-    <th>Address</th>
+    <th>Name</th>
+    <th>Description</th>
     <th>District</th>
-    <th>Addressgooglemap</th>
-    <th>Longitude</th>
+    <th>Address</th>
+    <th>Geolocation</th>
     <th>Phone</th>
-    <th>State</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,13 +15,12 @@
 
 <% @locals.each do |local| %>
   <tr>
-    <td><%= local.nameLocal %></td>
-    <td><%= local.address %></td>
+    <td><%= local.name %></td>
+    <td><%= local.description %></td>
     <td><%= local.district %></td>
-    <td><%= local.addressGoogleMap %></td>
-    <td><%= local.longitude %></td>
+    <td><%= local.address %></td>
+    <td><%= local.geolocation %></td>
     <td><%= local.phone %></td>
-    <td><%= local.state %></td>
     <td><%= link_to 'Show', local %></td>
     <td><%= link_to 'Edit', edit_local_path(local) %></td>
     <td><%= link_to 'Destroy', local, method: :delete, data: { confirm: 'Are you sure?' } %></td>

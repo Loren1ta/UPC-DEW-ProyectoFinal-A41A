@@ -32,14 +32,20 @@ echo "== Model Generated Completed == " >> output.log
 
 
 # rails d scaffold user   
-# rails d scaffold concert   
-# rails d scaffold lounge   
-# rails d scaffold lounge   
-# rails d resource usertype   
-# rails d resource user_band   
-# rails d resource ticket   
-# rails d resource score   
-# rails d resource comment   
-# rails d resource distrito   
-# rails d resource concertstatus   
-# rails d resource booking   
+# rails d scaffold type_people   
+# rails d scaffold locals   
+# rails d scaffold groups   
+# rails d resource concert   
+# rails d resource group_member   
+# rails d resource assistance   
+# rails d resource comments
+
+
+rails g resource user_type name:string isadmin:boolean
+rails g scaffold user givenname:string lastname1:string lastname2:string gender:string email:string user_type:references documentnumber:string documenttype:string 
+rails g scaffold group name:string genre:string biography:text picture:string 
+rails g resource group_user group_id:integer user_id:integer 
+
+rails g scaffold local name:string description:text district:string address:string geolocation:string phone:string  
+rails g scaffold concert headline:string description:text datestart:datetime dateend:datetime totalscore:integer local:references group:references
+rails g resource comment content:text user:references concert:references

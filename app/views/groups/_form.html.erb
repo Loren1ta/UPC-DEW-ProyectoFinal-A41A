@@ -1,29 +1,15 @@
-<%= form_for(@group) do |f| %>
-  <% if @group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
-
-      <ul>
-      <% @group.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= simple_form_for @group do |f| %>
+<% if f.error_notification %>
+    <% @group.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nameGroup %><br />
-    <%= f.text_field :nameGroup %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :musicStyle %><br />
-    <%= f.text_field :musicStyle %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <%= f.input :name, label: 'Nombre', html:{class:'form_field'} %>
+  <%= f.input :genre, label: 'Genero Musical', collection: ['Rock','Salsa','Balada'], include_blank: false   %>
+  <%= f.input :biography, label: 'Biograf&iacute;a'%>
+  <%= f.input :picture, label: 'Picture'%>
+
+
 <% end %>

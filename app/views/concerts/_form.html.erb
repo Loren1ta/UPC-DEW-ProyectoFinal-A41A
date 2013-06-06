@@ -12,20 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :dateIni %><br />
-    <%= f.text_field :dateIni %>
+    <%= f.label :headline %><br />
+    <%= f.text_field :headline %>
   </div>
   <div class="field">
-    <%= f.label :dateFin %><br />
-    <%= f.text_field :dateFin %>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
+    <%= f.label :datestart %><br />
+    <%= f.datetime_select :datestart %>
   </div>
   <div class="field">
-    <%= f.label :score %><br />
-    <%= f.number_field :score %>
+    <%= f.label :dateend %><br />
+    <%= f.datetime_select :dateend %>
+  </div>
+  <div class="field">
+    <%= f.label :totalscore %><br />
+    <%= f.number_field :totalscore %>
+  </div>
+  <div class="field">
+    <%= f.label :local %><br />
+    <%= f.text_field :local %>
+  </div>
+  <div class="field">
+    <%= f.label :group %><br />
+    <%= f.text_field :group %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  layout "private"
   # GET /users
   # GET /users.json
   def index
