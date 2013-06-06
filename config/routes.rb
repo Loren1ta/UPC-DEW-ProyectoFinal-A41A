@@ -2,6 +2,11 @@ Ising::Application.routes.draw do
 
   resources :comments
 
+  resources :picture_file do
+    member do
+      post "upload_file"
+    end
+  end
 
   resources :concerts
 
@@ -17,8 +22,7 @@ Ising::Application.routes.draw do
     end
   end
 
-  resources :users
-
+  resources :users 
 
   resources :user_types
 
@@ -34,6 +38,9 @@ Ising::Application.routes.draw do
   match "public/concerts" => "welcome#concerts"
   match "public/locals" => "welcome#locals"
   match "public/aboutus" => "welcome#aboutus"
+  match "public/enter" => "users#register_user"
+  match "public/login" => "users#login", :via => :post
+  match "public/logout" => "users#logout", :via => :get
 
 
   # The priority is based upon order of creation:

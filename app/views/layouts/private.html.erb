@@ -22,6 +22,7 @@
     
     <!-- CSS
     ================================================== -->
+    <link rel="stylesheet" href="/assets/express-css-table/style.css" />
     <link rel="stylesheet" href="/assets/css/zerogrid.css" />
     <link rel="stylesheet" href="/assets/css/style.css"/>
     <link rel="stylesheet" href="/assets/css/responsive.css"/>
@@ -102,7 +103,9 @@
                 </div>
               </div>
               <div class="box">
-                <div class="heading"><h2>Administrator</h2></div>
+                <div class="heading"><h2><%= session[:loggeduser].email %></h2></div>
+                <%= link_to 'Salir', "/public/logout" %>
+
                 <div class="content">
                   <img src="/assets/images/albums.png"/>
                 </div>
