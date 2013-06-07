@@ -36,6 +36,10 @@ class GroupsController < ApplicationController
   # GET /groups/new
   # GET /groups/new.json
   def new
+    #where(:user_type_id => 2).
+    @users = User.all()
+
+    
     @group = Group.new
 
     respond_to do |format|

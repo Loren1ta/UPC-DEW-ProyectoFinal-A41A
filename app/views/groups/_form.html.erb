@@ -5,40 +5,43 @@
 <% end %>
 <% end %>
 
+<%= f.input :pictureref,:as => :hidden, :input_html => {:value => UUID.new.generate } %>
+<div class="input string optional">
+  <img id="img" fieldname="group_pictureref" class="ajaxUpload picture_local" src="<%= @group.pictureref ? "/data/#{@group.pictureref}":'#' %>" />
+  <br/>
+  (click en la imagen para cambiar)
+</div>
 
 <%= f.input :name, label: 'Nombre', html:{class:'form_field'} %>
-<%= f.input :genre, label: 'Genero Musical', collection: ['Rock','Salsa','Balada'], include_blank: false   %>
+<%= f.input :genre, label: 'Genero Musical', collection: 
+[
+'Balada',
+'Ballenato',
+'Pop',
+'Rock',
+'Salsa',
+'Tropical',
+'Popular',
+'Ranchera',
+'Techno',
+'Regge',
+'Reggeton',
+'Musica clasica',
+'Latina',
+'Electonica',
+'Jazz',
+'Infantil',
+'Rap',
+'Tango ',
+'Ska',
+'Flamenco'
+], include_blank: false   %>
 <%= f.input :biography, label: 'Biograf&iacute;a'%>
 
-
-<%= f.input :picture,:as => :hidden, :input_html => {:value => UUID.new.generate } %>
+  <%= f.association :users, collection: User.all(), prompt: "Choose a Company", :as => "check_boxes",:label_method => lambda { 
+|r| "<img width='30' src='/data/#{r.pictureref}' /> #{r.lastname1} #{r.lastname2}, #{r.givenname}".html_safe } , label: false, value_method: :id  %>
 
 <%= f.button :submit %>
 
 
 <% end %>
-
-
-
-<div class="input string optional user_picture">
-  <img id="picture" width="100" height="100" src="#" onclick="$('#upload_datafile')[0].click()"/>
-</div>
-
-<%= form_tag('/picture_file/1/upload_file', id:'upload',:multipart => :true, :method => 'POST', :style=>"display:none") do %>
-<input type="submit" id="hidden_submit"/>
-<%= file_field 'upload', 'datafile', :onchange => "$('#hidden_submit')[0].click()" %></p>
-<script> 
-        // wait for the DOM to be loaded 
-        $(document).ready(function() { 
-            // bind 'myForm' and provide a simple callback function 
-            $('#upload').ajaxForm({beforeSubmit:function function_name (formData, jqForm, options) {
-              options.url = "/picture_file/"+$("#user_picture")[0].value+"/upload_file"
-              return true;
-            },success:function() { 
-              alert("El Archivo fue Cargado con exito");
-              $('#picture')[0].src = "/data/"+$("#user_picture")[0].value
-            }}); 
-          }); 
-        </script> 
-
-        <% end %>

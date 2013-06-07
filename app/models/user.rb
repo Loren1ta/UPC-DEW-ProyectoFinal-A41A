@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   
   attr_accessor :password_confirmation # attributo virtual no en base de datos
   validates_confirmation_of :password # validacionde confirmacion
-  validates :givenname, presence: true
+  validates :givenname, presence: true, :length => { :minimum => 2, :maximun => 100 }
   validates :lastname1, presence: true
   validates :lastname2, presence: true
   validates :documenttype, presence: true

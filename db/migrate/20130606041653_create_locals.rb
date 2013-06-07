@@ -7,6 +7,7 @@ class CreateLocals < ActiveRecord::Migration
       t.string :address
       t.string :geolocation
       t.string :phone
+      t.string :pictureref
 
       t.timestamps
     end

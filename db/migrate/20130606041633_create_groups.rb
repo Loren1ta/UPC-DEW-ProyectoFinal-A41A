@@ -4,7 +4,7 @@ class CreateGroups < ActiveRecord::Migration
       t.string :name
       t.string :genre
       t.text :biography
-      t.string :picture
+      t.string :pictureref
 
       t.timestamps
     end

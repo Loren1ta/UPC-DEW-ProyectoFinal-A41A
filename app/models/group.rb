@@ -1,5 +1,5 @@
 class Group < ActiveRecord::Base
-  attr_accessible :biography, :genre, :name, :picture, :user_ids
+  attr_accessible :biography, :genre, :name, :picture, :user_ids, :pictureref
 
   belongs_to :user
   has_many :group_users
