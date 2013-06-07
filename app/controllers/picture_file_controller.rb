@@ -7,7 +7,7 @@ class PictureFileController < ApplicationController
 
   def upload_file
 
-    post = PictureFile.save(params[:upload])
+    post = PictureFile.save(params[:upload], params[:id])
     render :text => "File has been uploaded successfully"
   end
 end

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :user_type
-  attr_accessible :email, :gender, :givenname, :lastname1, :lastname2, :documenttype, :documentnumber, :password, :user_type_id, :password_confirmation
+  attr_accessible :email, :gender, :givenname, :lastname1, :lastname2, :documenttype, :documentnumber, :password, :user_type_id, :password_confirmation, :pictureref
   
   attr_accessor :password_confirmation # attributo virtual no en base de datos
   validates_confirmation_of :password # validacionde confirmacion

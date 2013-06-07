@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  layout 'private'
   # GET /groups
   # GET /groups.json
   def index

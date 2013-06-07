@@ -6,17 +6,41 @@
     <li><%= msg %></li>
     <% end %>
   <% end %>
-  --> 
+--> 
+<%= f.input :pictureref,:as => :hidden, :input_html => {:value => UUID.new.generate } %>
+<div class="input string optional user_pictureref">
+  <img id="picture" width="100" height="100" src="#" onclick="$('#upload_datafile')[0].click()"/>
+</div>
+<%= f.input :givenname, label: 'Nombres', html:{class:'form_field'} %>
+<%= f.input :lastname1, label: 'Apellido Paterno' %>
+<%= f.input :lastname2, label: 'Apellido Materno' %>
+<%= f.input :documenttype, label: 'Tipo Document', collection: ['DNI','TUI'], include_blank: false %>
+<%= f.input :documentnumber, label: 'Numero Documento' %>
+<%= f.input :gender, label: 'Sexo', collection: ['Masculino','Femenino'], include_blank: false %>
+<%= f.input :email, label: 'Correo',placeholder: 'user@domain.com' %>
+<%= f.input :password, label: 'Clave' %>
+<%= f.input :password_confirmation, label: 'Confirmacion'%>
+<%= f.association :user_type, label: 'Tipo Usuario', include_blank: false %>
+<%= f.button :submit %>
 
-  <%= f.input :givenname, label: 'Nombres', html:{class:'form_field'} %>
-  <%= f.input :lastname1, label: 'Apellido Paterno' %>
-  <%= f.input :lastname2, label: 'Apellido Materno' %>
-  <%= f.input :documenttype, label: 'Tipo Document', collection: ['DNI','TUI'], include_blank: false %>
-  <%= f.input :documentnumber, label: 'Numero Documento' %>
-  <%= f.input :gender, label: 'Sexo', collection: ['Masculino','Femenino'], include_blank: false %>
-  <%= f.input :email, label: 'Correo',placeholder: 'user@domain.com' %>
-  <%= f.input :password, label: 'Clave' %>
-  <%= f.input :password_confirmation, label: 'Confirmacion'%>
-  <%= f.association :user_type, label: 'Tipo Usuario', include_blank: false %>
-  <%= f.button :submit %>
 <% end %>
+
+
+<%= form_tag('/picture_file/1/upload_file', id:'upload',:multipart => :true, :method => 'POST', :style=>"display:none") do %>
+<input type="submit" id="hidden_submit"/>
+<%= file_field 'upload', 'datafile', :onchange => "$('#hidden_submit')[0].click()" %></p>
+<script> 
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+            // bind 'myForm' and provide a simple callback function 
+            $('#upload').ajaxForm({beforeSubmit:function function_name (formData, jqForm, options) {
+              options.url = "/picture_file/"+$("#user_pictureref")[0].value+"/upload_file"
+              return true;
+            },success:function() { 
+              alert("El Archivo fue Cargado con exito");
+              $('#picture')[0].src = "/data/"+$("#user_pictureref")[0].value
+            }}); 
+          }); 
+        </script> 
+
+        <% end %>

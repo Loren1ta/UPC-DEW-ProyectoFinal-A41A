@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130606042035) do
+ActiveRecord::Schema.define(:version => 20130606171429) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -66,6 +66,11 @@ ActiveRecord::Schema.define(:version => 20130606042035) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "picture_files", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "user_types", :force => true do |t|
     t.string   "name"
     t.boolean  "isadmin"
@@ -82,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20130606042035) do
     t.string   "gender"
     t.string   "email"
     t.string   "password"
+    t.string   "pictureref"
     t.integer  "user_type_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false

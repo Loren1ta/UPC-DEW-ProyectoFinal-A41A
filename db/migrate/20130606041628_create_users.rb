@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :gender
       t.string :email
       t.string :password
+      t.string :pictureref
       t.references :user_type
 
       t.timestamps
