@@ -13,8 +13,57 @@
  */
  .admin-link{
   float: right !important;
- }
+}
 
 tr th, tr text-decoration: {
   border: 1px solid #ccc;
+}
+
+.simple_form div label{
+  width: 300px;
+  height: 20px;
+  display: block;
+}
+
+.simple_form div input{
+  width: 300px;
+  font-size: 20px;
+  display: block;
+  padding:5px;
+}
+
+.simple_form div label{
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.simple_form div .required abbr{
+  display: none;
+}
+.simple_form select {
+  width: 300px;
+  font-size: 20px;
+  display: block;
+  padding:5px;
+}
+
+.button{
+  color: #ffffff;
+  min-width: 100px;
+  min-height: 30px;
+  padding: 10px 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px; background: #ED145B; margin: 0px 5px 5px 0px; float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button:hover {
+  color: #ffffff; background: #F36A97;
+}
+
+.picture_local{
+  width: 300px;
+  height: 200px;
 }

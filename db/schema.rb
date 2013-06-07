@@ -11,72 +11,89 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603221002) do
-
-  create_table "assistances", :force => true do |t|
-    t.string   "state"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130606171429) do
 
   create_table "comments", :force => true do |t|
-    t.integer  "id_comment_pater"
-    t.text     "comment"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
-  create_table "concerts", :force => true do |t|
-    t.string   "dateIni"
-    t.string   "dateFin"
-    t.string   "state"
-    t.integer  "score"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "concert_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "group_members", :force => true do |t|
-    t.string   "state"
+  add_index "comments", ["concert_id"], :name => "index_comments_on_concert_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "concerts", :force => true do |t|
+    t.string   "headline"
+    t.text     "description"
+    t.datetime "datestart"
+    t.datetime "dateend"
+    t.integer  "totalscore"
+    t.integer  "local_id"
+    t.integer  "group_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "concerts", ["group_id"], :name => "index_concerts_on_group_id"
+  add_index "concerts", ["local_id"], :name => "index_concerts_on_local_id"
+
+  create_table "group_users", :force => true do |t|
+    t.integer  "group_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "groups", :force => true do |t|
-    t.string   "nameGroup"
-    t.string   "state"
-    t.string   "musicStyle"
+    t.string   "name"
+    t.string   "genre"
+    t.text     "biography"
+    t.string   "pictureref"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "locals", :force => true do |t|
-    t.string   "nameLocal"
-    t.string   "address"
+    t.string   "name"
+    t.text     "description"
     t.string   "district"
-    t.string   "addressGoogleMap"
-    t.string   "longitude"
+    t.string   "address"
+    t.string   "geolocation"
     t.string   "phone"
-    t.string   "state"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
-  create_table "type_people", :force => true do |t|
-    t.string   "description"
+    t.string   "pictureref"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "typeDocum"
-    t.string   "numDocum"
-    t.string   "firstName"
-    t.string   "lastName"
-    t.string   "name"
-    t.string   "sex"
-    t.string   "email"
+  create_table "picture_files", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "user_types", :force => true do |t|
+    t.string   "name"
+    t.boolean  "isadmin"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "givenname"
+    t.string   "lastname1"
+    t.string   "lastname2"
+    t.string   "documentnumber"
+    t.string   "documenttype"
+    t.string   "gender"
+    t.string   "email"
+    t.string   "password"
+    t.string   "pictureref"
+    t.integer  "user_type_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "users", ["user_type_id"], :name => "index_users_on_user_type_id"
 
 end

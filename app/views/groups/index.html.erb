@@ -1,10 +1,11 @@
 <h1>Listing groups</h1>
 
-<table>
+<table class="box-table-a">
   <tr>
-    <th>Namegroup</th>
-    <th>State</th>
-    <th>Musicstyle</th>
+    <th>Name</th>
+    <th>Genre</th>
+    <th>Biography</th>
+    <th>Picture</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,9 +13,10 @@
 
 <% @groups.each do |group| %>
   <tr>
-    <td><%= group.nameGroup %></td>
-    <td><%= group.state %></td>
-    <td><%= group.musicStyle %></td>
+    <td><%= group.name %></td>
+    <td><%= group.genre %></td>
+    <td><%= group.biography %></td>
+    <td><%= group.pictureref %></td>
     <td><%= link_to 'Show', group %></td>
     <td><%= link_to 'Edit', edit_group_path(group) %></td>
     <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>

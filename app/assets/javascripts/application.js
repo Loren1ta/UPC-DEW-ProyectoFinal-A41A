@@ -11,5 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require js/jquery.min
 //= require jquery_ujs
+//= require js/jquery.form
 //= require_tree .

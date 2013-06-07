@@ -1,13 +1,13 @@
 class CreateLocals < ActiveRecord::Migration
   def change
     create_table :locals do |t|
-      t.string :nameLocal
-      t.string :address
+      t.string :name
+      t.text :description
       t.string :district
-      t.string :addressGoogleMap
-      t.string :longitude
+      t.string :address
+      t.string :geolocation
       t.string :phone
-      t.string :state
+      t.string :pictureref
 
       t.timestamps
     end
