@@ -122,6 +122,13 @@
 	color: #fff;
 }
 
+.box-table-a td label{
+	font-weight: 800;
+}
+
+.box-table-a td span{
+}
+
 
 #box-table-b
 {

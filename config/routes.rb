@@ -16,11 +16,7 @@ Ising::Application.routes.draw do
 
   resources :group_users
 
-  resources :groups do
-    member do
-      get "add_users"
-    end
-  end
+  resources :groups 
 
   resources :users 
 

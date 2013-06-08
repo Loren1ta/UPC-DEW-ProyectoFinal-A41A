@@ -2,11 +2,8 @@
 
 <table class="box-table-a">
   <tr>
-    <th>Name</th>
-    <th>Description</th>
+    <th>Local</th>
     <th>District</th>
-    <th>Address</th>
-    <th>Geolocation</th>
     <th>Phone</th>
     <th></th>
     <th></th>
@@ -15,19 +12,20 @@
 
 <% @locals.each do |local| %>
   <tr>
-    <td><%= local.name %></td>
-    <td><%= local.description %></td>
+    <td>
+        <img src="/data/<%= local.pictureref %>" onerror="this.src='/data/default_local';" width="100" />
+        <%= local.name %>
+        <%= local.name %>
+    </td>
     <td><%= local.district %></td>
-    <td><%= local.address %></td>
-    <td><%= local.geolocation %></td>
     <td><%= local.phone %></td>
-    <td><%= link_to 'Show', local %></td>
-    <td><%= link_to 'Edit', edit_local_path(local) %></td>
-    <td><%= link_to 'Destroy', local, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', local , class: 'link_button'%></td>
+    <td><%= link_to 'Edit', edit_local_path(local) , class: 'link_button' %></td>
+    <td><%= link_to 'Destroy', local, method: :delete, data: { confirm: 'Are you sure?' } , class: 'link_button'%></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Local', new_local_path %>
+<%= link_to 'New Local', new_local_path , class: 'link_button' %>

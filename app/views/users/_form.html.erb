@@ -1,7 +1,7 @@
 <%= simple_form_for @user do |f| %>
 <%= f.input :pictureref,:as => :hidden, :input_html => {:value => UUID.new.generate } %>
 <div class="input string optional user_pictureref">
-  <img id="img" fieldname="user_pictureref" class="ajaxUpload picture_local" src="<%= @user.pictureref ? "/data/#{@user.pictureref}":'#' %>" />
+  <img id="img" fieldname="user_pictureref" class="ajaxUpload picture_user" src="<%= @user.pictureref ? "/data/#{@user.pictureref}":'#' %>" onerror="this.src='/data/default_user';"/>
   <br/>
   (click en la imagen para cambiar)
 </div>

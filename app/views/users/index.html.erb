@@ -12,20 +12,20 @@
 <% @users.each do |user| %>
 <tr>
     <td>
-        <img src="/data/<%= user.pictureref %>" width="100"/>
+        <img src="/data/<%= user.pictureref %>" onerror="this.src='/data/default_user';" width="100" />
         <br/>
-        <strong><%= user.lastname1 %> <%= user.lastname2 %>, <%= user.givenname %></strong>
+        <label><%= user.lastname1 %> <%= user.lastname2 %>, <%= user.givenname %></label> 
         <br/>
-        Email: <%= user.email %>
+        <label>Email</label> <span><%= user.email %></span> 
     </td>
     <td><%= user.user_type.name %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', user , class: 'link_button'%></td>
+    <td><%= link_to 'Edit', edit_user_path(user) , class: 'link_button'%></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } , class: 'link_button'%></td>
 </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path, class: 'link_button' %>
