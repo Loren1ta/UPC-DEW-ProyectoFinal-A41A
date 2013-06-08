@@ -7,7 +7,7 @@
 
 <%= f.input :pictureref,:as => :hidden, :input_html => {:value => UUID.new.generate } %>
 <div class="input string optional">
-  <img id="img" fieldname="group_pictureref" class="ajaxUpload picture_local" src="<%= @group.pictureref ? "/data/#{@group.pictureref}":'#' %>" />
+  <img id="img" fieldname="group_pictureref" class="ajaxUpload picture_group" src="<%= @group.pictureref ? "/data/#{@group.pictureref}":'#' %>" onerror="this.src='/data/default_group';" />
   <br/>
   (click en la imagen para cambiar)
 </div>
@@ -38,8 +38,8 @@
 ], include_blank: false   %>
 <%= f.input :biography, label: 'Biograf&iacute;a'%>
 
-  <%= f.association :users, collection: User.all(), prompt: "Choose a Company", :as => "check_boxes",:label_method => lambda { 
-|r| "<img width='30' src='/data/#{r.pictureref}' /> #{r.lastname1} #{r.lastname2}, #{r.givenname}".html_safe } , label: false, value_method: :id  %>
+<%= f.input :selected_users_id, :collection => User.all, :label_method => lambda { 
+|r| "<img width='30' onerror='this.src=\"/data/default_user\";' src='/data/#{r.pictureref}' /> #{r.lastname1} #{r.lastname2}, #{r.givenname}".html_safe } , :value_method => :id, :as => :check_boxes,:item_wrapper_class => 'checkbox_container', label: "Miembros" %>
 
 <%= f.button :submit %>
 

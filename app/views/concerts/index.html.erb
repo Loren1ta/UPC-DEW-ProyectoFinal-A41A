@@ -2,10 +2,13 @@
 
 <table>
   <tr>
-    <th>Dateini</th>
-    <th>Datefin</th>
-    <th>State</th>
-    <th>Score</th>
+    <th>Headline</th>
+    <th>Description</th>
+    <th>Datestart</th>
+    <th>Dateend</th>
+    <th>Totalscore</th>
+    <th>Local</th>
+    <th>Group</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,17 +16,20 @@
 
 <% @concerts.each do |concert| %>
   <tr>
-    <td><%= concert.dateIni %></td>
-    <td><%= concert.dateFin %></td>
-    <td><%= concert.state %></td>
-    <td><%= concert.score %></td>
-    <td><%= link_to 'Show', concert %></td>
-    <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
-    <td><%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= concert.headline %></td>
+    <td><%= concert.description %></td>
+    <td><%= concert.datestart %></td>
+    <td><%= concert.dateend %></td>
+    <td><%= concert.totalscore %></td>
+    <td><%= concert.local %></td>
+    <td><%= concert.group %></td>
+    <td><%= link_to 'Show', concert , class: 'link_button'%></td>
+    <td><%= link_to 'Edit', edit_concert_path(concert) , class: 'link_button'%></td>
+    <td><%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' } , class: 'link_button'%></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Concert', new_concert_path %>
+<%= link_to 'New Concert', new_concert_path , class: 'link_button'%>

@@ -1,3 +1,5 @@
 class Concert < ActiveRecord::Base
-  attr_accessible :dateFin, :dateIni, :score, :state
+  belongs_to :local
+  belongs_to :group
+  attr_accessible :dateend, :datestart, :description, :headline, :totalscore
 end

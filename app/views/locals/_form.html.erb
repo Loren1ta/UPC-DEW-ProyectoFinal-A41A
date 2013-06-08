@@ -1,6 +1,6 @@
 <%= simple_form_for @local do |f| %>
 <div class="input string optional">
-  <img id="img" fieldname="local_pictureref" class="ajaxUpload picture_local" src="<%= @local.pictureref ? "/data/#{@local.pictureref}":'#' %>" />
+  <img id="img" fieldname="local_pictureref" class="ajaxUpload picture_local" src="<%= @local.pictureref ? "/data/#{@local.pictureref}":'#' %>" onerror="this.src='/data/default_local';"/>
   <br/>
   (click en la imagen para cambiar)
 </div>

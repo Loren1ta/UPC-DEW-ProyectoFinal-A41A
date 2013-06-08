@@ -1,33 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Typedocum:</b>
-  <%= @user.typeDocum %>
+  <b>Image:</b>
+  <img src="/data/<%= @user.pictureref %>" width="100">
+</p>
+<p>
+  <b>Givenname:</b>
+  <%= @user.givenname %>
 </p>
 
 <p>
-  <b>Numdocum:</b>
-  <%= @user.numDocum %>
+  <b>Lastname1:</b>
+  <%= @user.lastname1 %>
 </p>
 
 <p>
-  <b>Firstname:</b>
-  <%= @user.firstName %>
+  <b>Lastname2:</b>
+  <%= @user.lastname2 %>
 </p>
 
 <p>
-  <b>Lastname:</b>
-  <%= @user.lastName %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
-
-<p>
-  <b>Sex:</b>
-  <%= @user.sex %>
+  <b>Gender:</b>
+  <%= @user.gender %>
 </p>
 
 <p>
@@ -35,6 +29,11 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <b>User type:</b>
+  <%= @user.user_type.name %>
+</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+<%= link_to 'Edit', edit_user_path(@user), class: 'link_button' %> |
+<%= link_to 'Back', users_path, class: 'link_button' %>

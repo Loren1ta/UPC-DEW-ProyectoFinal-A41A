@@ -1,8 +1,12 @@
 Ising::Application.routes.draw do
 
-  root :to => 'welcome#index'
+  resources :comments
 
-
+  resources :picture_file do
+    member do
+      post "upload_file"
+    end
+  end
 
   resources :concerts
 
@@ -10,19 +14,29 @@ Ising::Application.routes.draw do
   resources :locals
 
 
-  resources :groups
+  resources :group_users
+
+  resources :groups 
+
+  resources :users 
+
+  resources :user_types
+
+
+  root :to => 'welcome#index'
+
 
 
   resources :type_people
-
-  resources :users
-
   resources :welcome
 
   match "public/groups" => "welcome#groups"
   match "public/concerts" => "welcome#concerts"
   match "public/locals" => "welcome#locals"
   match "public/aboutus" => "welcome#aboutus"
+  match "public/enter" => "users#register_user"
+  match "public/login" => "users#login", :via => :post
+  match "public/logout" => "users#logout", :via => :get
 
 
   # The priority is based upon order of creation:

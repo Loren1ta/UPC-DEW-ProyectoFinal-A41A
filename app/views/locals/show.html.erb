@@ -1,40 +1,17 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Namelocal:</b>
-  <%= @local.nameLocal %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @local.address %>
-</p>
-
-<p>
-  <b>District:</b>
-  <%= @local.district %>
-</p>
-
-<p>
-  <b>Addressgooglemap:</b>
-  <%= @local.addressGoogleMap %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%= @local.longitude %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @local.phone %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @local.state %>
-</p>
-
-
-<%= link_to 'Edit', edit_local_path(@local) %> |
-<%= link_to 'Back', locals_path %>
+<div>
+  <label>Local:</label> <%= @local.name %>
+</div>
+<div>
+  <img class="picture_local" src="<%= @local.pictureref ? "/data/#{@local.pictureref}":'#'  %>" onerror="this.src='/data/default_local';" />
+</div>
+<div>
+  <label>Decripción:</label><span><%= @local.description %></span><br/>
+  <label>Teléfono:</label><span><%= @local.phone %></span><br/>
+  <label>Dirección:</label><span><%= @local.address %> - <%= @local.district %></span><br/>
+  <label>Google Map:</label><span><%= @local.geolocation %></span><br/>
+</div>
+<div>
+<%= link_to 'Edit', edit_local_path(@local) , class: 'link_button'%> 
+<%= link_to 'Back', locals_path, class: 'link_button' %>
+</div>

@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  nameGroup: MyString
-  state: MyString
-  musicStyle: MyString
+  name: MyString
+  genre: MyString
+  biography: MyText
+  picture: MyString
 
 two:
-  nameGroup: MyString
-  state: MyString
-  musicStyle: MyString
+  name: MyString
+  genre: MyString
+  biography: MyText
+  picture: MyString

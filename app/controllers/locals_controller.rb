@@ -1,5 +1,5 @@
 class LocalsController < ApplicationController
-  layout "private"
+  layout 'private'
   # GET /locals
   # GET /locals.json
   def index

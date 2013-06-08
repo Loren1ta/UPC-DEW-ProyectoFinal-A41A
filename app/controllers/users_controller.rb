@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout "private"
+  layout 'private'
   # GET /users
   # GET /users.json
   def index
@@ -9,6 +9,33 @@ class UsersController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @users }
     end
+  end
+
+  def register_user
+
+    @user = User.new
+
+    respond_to do |format|
+      format.html  {render :layout => 'application'}# index.html.erb
+    end
+  end
+
+  def login
+    @user = User.new(params[:user])
+    count = User.where(:email => @user.email, :password => @user.password).count()
+
+
+    if count == 1
+      session[:loggeduser] = User.where(:email => @user.email).first
+      redirect_to :controller => "users", :action => "index"
+    else
+      redirect_to "/public/enter", :notice => "Usuario/Clave Incorrectos. "
+    end
+  end
+
+  def logout
+      session[:loggeduser] = nil
+      redirect_to "/"
   end
 
   # GET /users/1

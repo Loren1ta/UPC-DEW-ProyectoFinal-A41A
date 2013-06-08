@@ -1,35 +1,31 @@
 <h1>Listing users</h1>
 
-<table>
+<table class="box-table-a">
   <tr>
-    <th>Typedocum</th>
-    <th>Numdocum</th>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Name</th>
-    <th>Sex</th>
-    <th>Email</th>
+    <th>Usuario</th>
+    <th>User type</th>
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+</tr>
 
 <% @users.each do |user| %>
-  <tr>
-    <td><%= user.typeDocum %></td>
-    <td><%= user.numDocum %></td>
-    <td><%= user.firstName %></td>
-    <td><%= user.lastName %></td>
-    <td><%= user.name %></td>
-    <td><%= user.sex %></td>
-    <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<tr>
+    <td>
+        <img src="/data/<%= user.pictureref %>" onerror="this.src='/data/default_user';" width="100" />
+        <br/>
+        <label><%= user.lastname1 %> <%= user.lastname2 %>, <%= user.givenname %></label> 
+        <br/>
+        <label>Email</label> <span><%= user.email %></span> 
+    </td>
+    <td><%= user.user_type.name %></td>
+    <td><%= link_to 'Show', user , class: 'link_button'%></td>
+    <td><%= link_to 'Edit', edit_user_path(user) , class: 'link_button'%></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } , class: 'link_button'%></td>
+</tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path, class: 'link_button' %>
