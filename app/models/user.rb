@@ -15,4 +15,22 @@ class User < ActiveRecord::Base
 
   has_many :groups_users
   has_many :groups, :through => :groups_users
+
+  has_many :authentications
+
+  def self.new_authentication(auth)
+    create! do |user|
+      user.email = "twitter@twitter.com"
+      user.gender = ""
+      user.givenname = auth['info']['name']
+      user.lastname1 = auth['info']['name']
+      user.lastname2 = auth['info']['name']
+      user.documenttype = "DNI"
+      user.documentnumber = "123456"
+      user.password = "123456"
+      user.user_type_id = 3
+      user.password_confirmation = "123456"
+      user.pictureref = ""
+    end
+  end
 end

@@ -1,5 +1,8 @@
 Ising::Application.routes.draw do
 
+
+  match "/auth/:provider/callback" => "sessions#create"
+
   resources :comments
 
   resources :picture_file do

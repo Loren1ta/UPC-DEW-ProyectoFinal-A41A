@@ -9,6 +9,9 @@ gem 'sqlite3'
 gem 'simple_form'
 gem 'uuid'
 
+gem "omniauth"
+
+gem "omniauth-twitter"
 
 # Gems used only for assets and not required
 # in production environments by default.
