@@ -33,6 +33,8 @@ Ising::Application.routes.draw do
   resources :type_people
   resources :welcome
 
+  match "/signout" => "sessions#destroy", :as => :signout
+
   match "public/groups" => "welcome#groups"
   match "public/concerts" => "welcome#concerts"
   match "public/locals" => "welcome#locals"

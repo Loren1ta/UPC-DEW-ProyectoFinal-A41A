@@ -8,11 +8,6 @@
         <li><a href="/public/locals">Locales</a></li>
         <li><a href="/public/aboutus">Acerca de</a></li>
 
-        <% if current_user %>
-            <li class="admin-link"><a href="/users/<%= current_user.id %>"><%= current_user.givenname %></a></li>
-        <% else %>
-            <li class="admin-link"><a href="/public/enter">Entrar</a></li>
-        <% end %>
 
 
       </ul>

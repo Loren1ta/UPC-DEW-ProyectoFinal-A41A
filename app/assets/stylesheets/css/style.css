@@ -155,3 +155,69 @@ footer {margin-top: 15px;}
 	background: -webkit-linear-gradient(top, #ddd, #aaa);	background: -moz-linear-gradient(top, #ddd, #aaa);
 	background: -ms-linear-gradient(top, #ddd, #aaa);	background: -o-linear-gradient(top, #ddd, #aaa);
 	background: linear-gradient(top, #ddd, #aaa);	border: 2px solid #999;}
+
+
+.loggeo{
+    background: #FFF;
+    padding: 2.5px 5px 4px 5px;
+    float: right;
+    position: relative;
+    border-radius: 0 0 3px 3px;
+    -webkit-box-shadow: 0 0 3px #AAAAAA;
+    -moz-box-shadow: 0 0 3px #AAAAAA;
+    box-shadow: 0 0 3px #AAAAAA;
+}
+
+.link_loggeo {
+    text-decoration: underline!important;
+    color: #0066CC;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    font-size: 11px;
+    line-height: 1;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.link_loggeo:hover{
+    color: #CCC;
+    background: #FFF;
+}
+
+.link_login {
+    text-decoration: underline !important;
+    color: #ccc;
+    margin: 0;
+    font-weight: 700;
+    margin-right: 30px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    font-size: 11px;
+    line-height: 1;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.link_login:hover{
+    color: #ccc;
+    background: #FFF;
+}
+
+.user_label{
+    color: #221919;
+    font-weight: bold;
+    font-family: verdana;
+    font-size: 11px;
+}
+
+.loggeo .salir{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 4px;
+    right: 5px ;
+    background-image: url("/assets/salir.png");
+}

@@ -66,6 +66,15 @@
           <div class="button-search"></div>
           <input type="text" value="Search..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
         </div>
+
+        <div class="loggeo">
+          <% if current_user %>
+              <label class="user_label">Usuario:</label> <a class="link_login" href="/users/<%= current_user.id %>"><%= current_user.givenname %></a>
+              <a href="<%= signout_path %>" class="salir" > </a>
+          <% else %>
+              <a class="link_loggeo" href="/public/enter">Entrar</a>
+          <% end %>
+        </div>
       </div>
     </header>
 
