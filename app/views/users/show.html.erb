@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Image:</b>
+  <b>Imagen:</b>
   <img src="/data/<%= @user.pictureref %>" width="100">
 </p>
 <p>
-  <b>Givenname:</b>
+  <b>Nombre:</b>
   <%= @user.givenname %>
 </p>
 
 <p>
-  <b>Lastname1:</b>
+  <b>Apellido Paterno:</b>
   <%= @user.lastname1 %>
 </p>
 
 <p>
-  <b>Lastname2:</b>
+  <b>Apellido Paterno:</b>
   <%= @user.lastname2 %>
 </p>
 
 <p>
-  <b>Gender:</b>
+  <b>Sexo:</b>
   <%= @user.gender %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>Correo:</b>
   <%= @user.email %>
 </p>
 
 <p>
-  <b>User type:</b>
+  <b>Tipo Usuario:</b>
   <%= @user.user_type.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user), class: 'link_button' %> |
-<%= link_to 'Back', users_path, class: 'link_button' %>
+<%= link_to 'Editar', edit_user_path(@user), class: 'link_button' %> |
+<%= link_to 'Regresar', users_path, class: 'link_button' %>

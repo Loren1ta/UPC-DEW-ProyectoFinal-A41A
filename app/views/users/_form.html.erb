@@ -8,12 +8,12 @@
 <%= f.input :givenname, label: 'Nombres', html:{class:'form_field'} %>
 <%= f.input :lastname1, label: 'Apellido Paterno' %>
 <%= f.input :lastname2, label: 'Apellido Materno' %>
-<%= f.input :documenttype, label: 'Tipo Document', collection: ['DNI','TUI'], include_blank: false %>
+<%= f.input :documenttype, label: 'Tipo Documento', collection: ['DNI','TUI'], include_blank: false %>
 <%= f.input :documentnumber, label: 'Numero Documento' %>
 <%= f.input :gender, label: 'Sexo', collection: ['Masculino','Femenino'], include_blank: false %>
 <%= f.input :email, label: 'Correo',placeholder: 'user@domain.com' %>
 <%= f.input :password, label: 'Clave' %>
-<%= f.input :password_confirmation, label: 'Confirmacion'%>
+<%= f.input :password_confirmation, label: 'Confirmación'%>
 <%= f.association :user_type, label: 'Tipo Usuario', include_blank: false %>
 <%= f.button :submit %>
 

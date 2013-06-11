@@ -1,45 +1,18 @@
-<%= form_for(@concert) do |f| %>
-  <% if @concert.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@concert.errors.count, "error") %> prohibited this concert from being saved:</h2>
+<%= simple_form_for @concert do |f| %>
+<% if f.error_notification %>
+<% @concert.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+<% end %>
 
-      <ul>
-      <% @concert.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= f.input :headline, label: 'Nombre' %>
+<%= f.input :description, label: 'Descripción' %>
+<%= f.input :datestart, label: 'Fecha de Inicio' %>
+<%= f.input :dateend, label: 'Fecha de Fin' %>
+<%= f.input :totalscore, label: 'Calificación', :collection => 1..5, :as => :radio %>
+<%= f.input :local, label: 'Local', :collection => Local.all %>
+<%= f.input :group, label: 'Grupo', :collection => Group.all %>
 
-  <div class="field">
-    <%= f.label :headline %><br />
-    <%= f.text_field :headline %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :datestart %><br />
-    <%= f.datetime_select :datestart %>
-  </div>
-  <div class="field">
-    <%= f.label :dateend %><br />
-    <%= f.datetime_select :dateend %>
-  </div>
-  <div class="field">
-    <%= f.label :totalscore %><br />
-    <%= f.number_field :totalscore %>
-  </div>
-  <div class="field">
-    <%= f.label :local %><br />
-    <%= f.text_field :local %>
-  </div>
-  <div class="field">
-    <%= f.label :group %><br />
-    <%= f.text_field :group %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= f.button :submit, label: 'Crear concierto' %>
+
 <% end %>

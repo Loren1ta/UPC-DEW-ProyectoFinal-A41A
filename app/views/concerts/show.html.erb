@@ -1,27 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Headline:</b>
+  <b>Nombre:</b>
   <%= @concert.headline %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>Descripción:</b>
   <%= @concert.description %>
 </p>
 
 <p>
-  <b>Datestart:</b>
+  <b>Fecha de Inicio:</b>
   <%= @concert.datestart %>
 </p>
 
 <p>
-  <b>Dateend:</b>
+  <b>Fecha Fin:</b>
   <%= @concert.dateend %>
 </p>
 
 <p>
-  <b>Totalscore:</b>
+  <b>Calificación:</b>
   <%= @concert.totalscore %>
 </p>
 
@@ -31,10 +31,10 @@
 </p>
 
 <p>
-  <b>Group:</b>
+  <b>Grupo:</b>
   <%= @concert.group %>
 </p>
 
 
-<%= link_to 'Edit', edit_concert_path(@concert) , class: 'link_button'%> |
-<%= link_to 'Back', concerts_path , class: 'link_button'%>
+<%= link_to 'Mostrar', edit_concert_path(@concert) , class: 'link_button'%> |
+<%= link_to 'Regresar', concerts_path , class: 'link_button'%>
