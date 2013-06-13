@@ -2,6 +2,38 @@ class UsersController < ApplicationController
   layout 'private'
   # GET /users
   # GET /users.json
+
+  def alumno
+    @user = params[:user]
+
+  end
+
+  def setting
+
+    @user = current_user
+
+    if (@user.twitter)
+      @user.gender=""
+      @user.lastname1=""
+      @user.lastname2=""
+      @user.documentnumber=""
+    end
+
+    respond_to do |format|
+      format.html # setting.html.erb
+    end
+  end
+
+  def setting_edit
+
+
+
+    if User.update_user(params[:user])
+      redirect_to setting_url
+    end
+
+  end
+
   def index
     @users = User.all
 

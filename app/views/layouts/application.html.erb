@@ -70,7 +70,7 @@
 
                 <div class="loggeo">
                   <% if current_user %>
-                      <label class="user_label">Usuario:</label> <a class="link_login" href="/users/<%= current_user.id %>"><%= current_user.givenname %></a>
+                      <label class="user_label">Usuario:</label> <a class="link_login" href="/setting"><%=current_user.givenname%></a>
                       <a href="<%= signout_path %>" class="salir" > </a>
                   <% else %>
                       <a class="link_loggeo" href="/public/enter">Entrar</a>

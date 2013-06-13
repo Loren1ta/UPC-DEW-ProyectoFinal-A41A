@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
     if (auth)
       authenticate = Authentication.find_by_provider_and_uid(auth['provider'],auth['uid'])
 
-
       if current_user
         user = current_user
       elsif (authenticate)
@@ -17,7 +16,7 @@ class SessionsController < ApplicationController
       end
 
       session[:user_id] = user.id
-      redirect_to :controller => "users", :action => "index"
+      redirect_to setting_url
 
     end
 

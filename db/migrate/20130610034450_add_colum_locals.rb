@@ -1,4 +1,4 @@
-class AddColumUser < ActiveRecord::Migration
+class AddColumLocals < ActiveRecord::Migration
   def change
     add_column :locals, :latitude, :float #you can change the name, see wiki
     add_column :locals, :longitude, :float #you can change the name, see wiki

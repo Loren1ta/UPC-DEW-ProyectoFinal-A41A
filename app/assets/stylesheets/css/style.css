@@ -214,10 +214,15 @@ footer {margin-top: 15px;}
 }
 
 .loggeo .salir{
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    top: 4px;
-    right: 5px ;
+     width: 24px;
+     height: 24px;
+     position: absolute;
+     top: 4px;
+     right: 5px ;
+     background-image: url("/assets/salir.png");
+ }
+
+.loggeo .salir:hover{
+    background: #FFF;
     background-image: url("/assets/salir.png");
 }

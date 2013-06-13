@@ -44,6 +44,11 @@ Ising::Application.routes.draw do
   match "public/logout" => "users#logout", :via => :get
 
 
+
+  match "/setting" => "users#setting", :via => :get , :as => :setting
+
+  match "/setting_edit" => "users#setting_edit" , :via => :post , :as => :setting_edit
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :user_type
-  attr_accessible :email, :gender, :givenname, :lastname1, :lastname2, :documenttype, :documentnumber, :password, :user_type_id, :password_confirmation, :pictureref
+  attr_accessible :email, :gender, :givenname, :lastname1, :lastname2, :documenttype, :documentnumber, :password, :user_type_id, :password_confirmation, :pictureref, :twitter
   
   attr_accessor :password_confirmation # attributo virtual no en base de datos
   validates_confirmation_of :password # validacionde confirmacion
@@ -31,6 +31,28 @@ class User < ActiveRecord::Base
       user.user_type_id = 3
       user.password_confirmation = "123456"
       user.pictureref = ""
+      user.twitter = true
     end
+  end
+
+  def self.update_user(user_temp)
+
+    @user = User.find(user_temp[:id])
+
+    @user.email = "twitter@twitter.com"
+    @user.gender = user_temp[:gender]
+    @user.givenname = user_temp[:givenname]
+    @user.lastname1 = user_temp[:lastname1]
+    @user.lastname2 = user_temp[:lastname2]
+    @user.documenttype = user_temp[:documenttype]
+    @user.documentnumber = user_temp[:documentnumber]
+    @user.password = "123456"
+    @user.user_type_id = user_temp[:documenttype] == 'DNI' ? 3:2
+    @user.password_confirmation = "123456"
+    @user.pictureref = ""
+    @user.twitter = user_temp[:twitter]
+
+    @user.save
+
   end
 end
