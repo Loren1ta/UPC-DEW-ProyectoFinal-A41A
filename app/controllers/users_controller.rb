@@ -21,11 +21,13 @@ class UsersController < ApplicationController
   end
 
   def login
+    Rails.logger.info "=================> Trying to login."
     @user = User.new(params[:user])
     count = User.where(:email => @user.email, :password => @user.password).count()
 
 
     if count == 1
+      session[:user_id] = User.where(:email => @user.email).first.id
       session[:loggeduser] = User.where(:email => @user.email).first
       redirect_to :controller => "users", :action => "index"
     else

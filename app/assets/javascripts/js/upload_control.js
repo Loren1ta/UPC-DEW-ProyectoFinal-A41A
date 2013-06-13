@@ -18,7 +18,7 @@ $(document).ready(function() {
         // ajaxForm_####
         // file_####
         // hiddenbutton_####
-        var form = $("<form enctype='multipart/form-data' accept-charset='UTF-8' action='' fieldname='"+element.attributes.fieldname.value+"' id='ajaxForm_"+id+"' genId='"+id+"' method='post'><input type='file' name='upload[datafile]' id='file_"+id+"'/><input type='submit' id='hiddenbutton_"+id+"'/></form>");
+        var form = $("<form enctype='multipart/form-data' accept-charset='UTF-8' action='' fieldname='"+element.attributes.fieldname.value+"' id='ajaxForm_"+id+"' genId='"+id+"' method='post'><input accept=\"image/*\" type='file' name='upload[datafile]' id='file_"+id+"'/><input type='submit' id='hiddenbutton_"+id+"'/></form>");
 
         $("body").append(form);
         form.genId = element.genId ;
