@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       end
 
       session[:user_id] = user.id
-      redirect_to :controller => "users", :action => "index"
+      redirect_to setting_url
 
     end
 

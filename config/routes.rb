@@ -43,6 +43,22 @@ Ising::Application.routes.draw do
   match "public/login" => "users#login", :via => :post
   match "public/logout" => "users#logout", :via => :get
 
+  #Procesos del Usuario ----------------------------------------
+
+  match "/password" => "users#password", :via => :get , :as => :password_root
+  match "/password_change" => "users#password_change" , :via => :post , :as => :password_change
+
+  match "/alumno" => "users#alumno", :via => :get , :as => :alumno_root
+  match "/alumno_change" => "users#alumno_change" , :via => :post , :as => :alumno_change
+
+  match "/email" => "users#email", :via => :get , :as => :email_root
+  match "/email_change" => "users#email_change" , :via => :post , :as => :email_change
+
+  match "/setting" => "users#setting", :via => :get , :as => :setting
+  match "/setting_edit" => "users#setting_edit" , :via => :post , :as => :setting_edit
+
+  # FIN Procesos del Usuario ----------------------------------------
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

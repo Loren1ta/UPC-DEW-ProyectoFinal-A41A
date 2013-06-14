@@ -1,5 +1,89 @@
 class UsersController < ApplicationController
   layout 'private'
+
+
+  def alumno
+    @user = current_user
+    @user.documentnumber = @user.documenttype == 'DNI' ? '': @user.documentnumber
+  end
+
+  def alumno_change
+    @user = current_user
+    @user.update_attribute('documenttype' , 'TUI')
+    @user.update_attribute('user_type_id' , '2')
+    if (@user.update_attribute('documentnumber' , params[:user][:documentnumber]))
+      @notice = 'Se actualizo tu nivel de acceso ahora eres Alumno'
+    else
+      @notice = 'Error: No Se actualizo tu nivel de acceso'
+    end
+
+    redirect_to alumno_root_url , :notice => @notice
+
+  end
+
+  def email_change
+    @user = current_user
+
+    if (@user.update_attribute('email' , params[:user][:email]))
+      @notice = 'Se actualizo el email con exito...'
+    else
+      @notice = 'Error: No Se actualizo el email...'
+    end
+
+    redirect_to email_root_url , :notice => @notice
+
+  end
+
+  def email
+    @user = current_user
+    @user.email = ''
+  end
+
+  def password_change
+    @user = current_user
+
+    if (params[:user][:password] == params[:user][:password_confirmation])
+      @user.update_attribute('password' , params[:user][:password])
+      @user.update_attribute('password_confirmation' , params[:user][:password_confirmation])
+      @notice = 'Se actualizo el password con exito...'
+    end
+
+    if (params[:user][:password] != params[:user][:password_confirmation])
+      @notice = 'Error: password no son iguales...'
+    end
+
+    redirect_to password_root_url , :notice => @notice
+
+  end
+
+  def password
+    @user = current_user
+  end
+
+  def setting
+
+    @user = current_user
+
+    if (@user.twitter)
+      @user.gender=""
+      @user.lastname1=""
+      @user.lastname2=""
+      @user.documentnumber=""
+    end
+
+    respond_to do |format|
+      format.html # setting.html.erb
+    end
+  end
+
+  def setting_edit
+
+    if User.update_user(params[:user])
+      redirect_to setting_url
+    end
+
+  end
+
   # GET /users
   # GET /users.json
   def index
@@ -25,11 +109,10 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     count = User.where(:email => @user.email, :password => @user.password).count()
 
-
     if count == 1
       session[:user_id] = User.where(:email => @user.email).first.id
       session[:loggeduser] = User.where(:email => @user.email).first
-      redirect_to :controller => "users", :action => "index"
+      redirect_to setting_url
     else
       redirect_to "/public/enter", :notice => "Usuario/Clave Incorrectos. "
     end

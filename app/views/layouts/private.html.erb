@@ -69,7 +69,7 @@
 
         <div class="loggeo">
           <% if current_user %>
-              <label class="user_label">Usuario:</label> <a class="link_login" href="/users/<%= current_user.id %>"><%= current_user.givenname %></a>
+              <label class="user_label">Usuario:</label> <a class="link_login" href="/setting"><%= current_user.givenname %></a>
               <a href="<%= signout_path %>" class="salir" > </a>
           <% else %>
               <a class="link_loggeo" href="/public/enter">Entrar</a>
@@ -110,15 +110,7 @@
                   <!-- ###  ### -->
                 </div>
               </div>
-              <div class="box">
-                <% if session[:loggeduser] %>
-                  <div class="heading"><h2><%= session[:loggeduser].email if session[:loggeduser] %></h2></div>
-                    <%= link_to 'Salir', "/public/logout" %>
 
-                  <div class="content">
-                  </div>
-                  <% end %>
-                </div>
               </div>
             </div>
           </div>

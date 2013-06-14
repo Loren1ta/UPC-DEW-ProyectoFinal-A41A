@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610034450) do
+ActiveRecord::Schema.define(:version => 20130610034451) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -101,8 +101,9 @@ ActiveRecord::Schema.define(:version => 20130610034450) do
     t.string   "password"
     t.string   "pictureref"
     t.integer  "user_type_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.boolean  "twitter",        :default => false
   end
 
   add_index "users", ["user_type_id"], :name => "index_users_on_user_type_id"
