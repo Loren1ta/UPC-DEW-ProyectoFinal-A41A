@@ -45,6 +45,11 @@ class ConcertsController < ApplicationController
 
     respond_to do |format|
       if @concert.save
+
+        @concert.update_attribute('estate','ACT')
+        @local = Local.find(@concert.local.id)
+        @local.update_attribute('estate','ACT')
+
         format.html { redirect_to @concert, notice: 'Concert was successfully created.' }
         format.json { render json: @concert, status: :created, location: @concert }
       else
@@ -73,8 +78,9 @@ class ConcertsController < ApplicationController
   # DELETE /concerts/1
   # DELETE /concerts/1.json
   def destroy
-    @concert = Concert.find(params[:id])
-    @concert.destroy
+
+    @concerts = Concert.find(params[:id])
+    @concerts.update_attribute('estate','INA')
 
     respond_to do |format|
       format.html { redirect_to concerts_url }

@@ -16,7 +16,7 @@ class WelcomeController < ApplicationController
 
   def concerts
 
-    @concerts = Concert.all
+    @concerts = Concert.where(:estate => 'ACT')
     @cont = 0
 
     respond_to do |format|

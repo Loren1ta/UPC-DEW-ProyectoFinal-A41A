@@ -1,5 +1,5 @@
 class Local < ActiveRecord::Base
-  attr_accessible :address, :description, :district, :geolocation, :name, :phone, :pictureref
+  attr_accessible :address, :description, :district, :geolocation, :name, :phone, :pictureref , :estate
   
   validates :name, presence: true, :length => { :minimum => 1, :maximun => 200 }
   validates :address, presence: true, :length => { :minimum => 1, :maximun => 300 }

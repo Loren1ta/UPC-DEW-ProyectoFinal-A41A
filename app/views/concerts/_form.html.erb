@@ -12,7 +12,7 @@
 <%= f.input :totalscore, label: 'Calificación', :collection => 1..5, :as => :radio %>
 <%= f.input :local_id, label: 'Local', :collection => Local.all %>
 <%= f.input :group_id, label: 'Grupo', :collection => Group.all %>
-
+<%= f.input :estate, :as => 'hidden',  html:{value:'ACT'} %>
 <%= f.button :submit, label: 'Crear concierto' %>
 
 <% end %>
