@@ -1,10 +1,10 @@
-<h1>Listing locals</h1>
+<h1>Listado de locales</h1>
 
 <table class="box-table-a">
   <tr>
-    <th>Local</th>
-    <th>District</th>
-    <th>Phone</th>
+    <th>Nombre</th>
+    <th>Distrito</th>
+    <th>Teléfono</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,13 +19,13 @@
     </td>
     <td><%= local.district %></td>
     <td><%= local.phone %></td>
-    <td><%= link_to 'Show', local , class: 'link_button'%></td>
-    <td><%= link_to 'Edit', edit_local_path(local) , class: 'link_button' %></td>
-    <td><%= link_to 'Destroy', local, method: :delete, data: { confirm: 'Are you sure?' } , class: 'link_button'%></td>
+    <td><%= link_to 'Mostrar', local , class: 'link_button'%></td>
+    <td><%= link_to 'Editar', edit_local_path(local) , class: 'link_button' %></td>
+    <td><%= link_to 'Borrar', local, method: :delete, data: { confirm: 'Está seguro de borrar?' } , class: 'link_button'%></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Local', new_local_path , class: 'link_button' %>
+<%= link_to 'Nuevo local', new_local_path , class: 'link_button' %>

@@ -1,4 +1,4 @@
-<h1>Listing groups</h1>
+<h1>Listado de grupos</h1>
 
 <table class="box-table-a">
   <tr>
@@ -24,13 +24,13 @@
       <% end %>
     </td>
     <td><%= group.genre %></td>
-    <td><%= link_to 'Show', group, class: 'link_button' %></td>
-    <td><%= link_to 'Edit', edit_group_path(group), class: 'link_button' %></td>
-    <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } , class: 'link_button'%></td>
+    <td><%= link_to 'Mostrar', group, class: 'link_button' %></td>
+    <td><%= link_to 'Editar', edit_group_path(group), class: 'link_button' %></td>
+    <td><%= link_to 'Borrar', group, method: :delete, data: { confirm: 'Está seguro de borrar?' } , class: 'link_button'%></td>
   </tr>
   <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Group', new_group_path, class: 'link_button' %>
+<%= link_to 'Nuevo grupo', new_group_path, class: 'link_button' %>

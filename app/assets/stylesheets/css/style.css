@@ -47,12 +47,12 @@ header #search input{background: #FFF;	padding: 1px 33px 1px 5px;	width: 182px;	
 /* -------------------------------------------- */
 /* ------------------Navigation---------------- */
 nav {margin:15px 0px;}
-nav .wrap-nav{height: 80px; background: #ED145B;}
+nav .wrap-nav{height: 50px; background: #ED145B;}
 
 .menu ul {list-style: none;margin: 0;padding: 0;}
-.menu  ul li {position: relative;float: left;padding: 6px 5px 0px 5px; margin: 17px;}
+.menu  ul li {position: relative;float: left;padding: 6px 5px 0px 5px; margin: 7px;}
 .menu  ul li:hover {background: #F36A97;}
-.menu  ul li a {font-size: 16px; line-height:20px;color:#ffffff;display: block;padding: 6px 10px;margin-bottom: 5px;z-index: 6;position: relative; text-transform:uppercase; }
+.menu  ul li a {font-size: 16px; line-height:10px;color:#ffffff;display: block;padding: 6px 10px;margin-bottom: 5px;z-index: 6;position: relative; text-transform:uppercase; }
 .menu  ul li:hover a {}
 .menu .current{background: #F36A97;}
 
@@ -70,7 +70,7 @@ nav .wrap-nav{height: 80px; background: #ED145B;}
 
 /* -------------------------------------------- */
 /* ------------------Content------------------- */
-#content {margin:15px 0px;}
+#content {margin:0px 0px;}
 #content .wrap-content{background: #141414;}
 
 .block01 {padding: 10px;}
