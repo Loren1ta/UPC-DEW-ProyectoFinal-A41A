@@ -6,6 +6,9 @@ class WelcomeController < ApplicationController
   end
 
   def groups
+
+    @groups = Group.all
+
     respond_to do |format|
       format.html # index.html.erb
     end
@@ -14,6 +17,7 @@ class WelcomeController < ApplicationController
   def concerts
 
     @concerts = Concert.all
+    @cont = 0
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,6 +25,9 @@ class WelcomeController < ApplicationController
   end
 
   def locals
+
+    @locals = Local.all
+
     respond_to do |format|
       format.html # index.html.erb
     end

@@ -2,105 +2,22 @@
 <!-- ------------Content------------- -->
 <section id="content">
   <div class="wrap-content zerogrid">
-    <div class="row block03">
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img1.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
-        </div>
-      </div>
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img2.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
-        </div>
-      </div>
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img3.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
-        </div>
-      </div>
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img4.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
-        </div>
-      </div>
-    </div>
-    <div class="row block03">
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img3.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
-        </div>
-      </div>
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img4.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
-        </div>
-      </div>
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img1.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
-        </div>
-      </div>
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img2.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
-        </div>
-      </div>
-    </div>
-    <div class="row block03">
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img4.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
-        </div>
-      </div>
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img3.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
-        </div>
-      </div>
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img1.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
-        </div>
-      </div>
-      <div class="col-1-4">
-        <div class="wrap-col">
-          <article>
-            <img src="/assets/images/img2.png"/>
-            <h2><a href="#">Dreaming With Us All Night</a></h2>
-          </article>
+        <% @groups.each.with_index do |group , index| %>
+            <% if index % 4 == 0 %>
+                <% if index > 1 %>
+                    </div>
+                <% end %>
+                <div class="row block03">
+            <% end %>
+                <div class="col-1-4">
+                  <div class="wrap-col">
+                    <article>
+                      <img id="img" fieldname="group_pictureref" src="<%= group.pictureref ? "/data/#{group.pictureref}":'#' %>" onerror="this.src='/data/default_group';" />
+                      <h2><%= group.name  %> </h2>
+                    </article>
+                  </div>
+                </div>
+        <% end %>
         </div>
       </div>
     </div>
@@ -165,7 +82,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row copyright">
       <p>Copyright © 2013 - <a href="http://www.zerotheme.com" target="_blank">Free Html5 Templates</a> and <a href="http://www.zerotheme.com" target="_blank">Free Responsive Templates</a> by Zerotheme.com</p>
     </div>
