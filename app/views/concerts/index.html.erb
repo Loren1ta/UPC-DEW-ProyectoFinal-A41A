@@ -21,8 +21,8 @@
     <td><%= concert.datestart %></td>
     <td><%= concert.dateend %></td>
     <td><%= concert.totalscore %></td>
-    <td><%= concert.local %></td>
-    <td><%= concert.group %></td>
+    <td><%= concert.local.name %></td>
+    <td><%= concert.group.name %></td>
     <td><%= link_to 'Mostrar', concert , class: 'link_button'%></td>
     <td><%= link_to 'Editar', edit_concert_path(concert) , class: 'link_button'%></td>
     <td><%= link_to 'Borrar', concert, method: :delete, data: { confirm: 'Está seguro de borrar?' } , class: 'link_button'%></td>

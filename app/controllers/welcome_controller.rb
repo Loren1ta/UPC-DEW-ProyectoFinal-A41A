@@ -12,6 +12,9 @@ class WelcomeController < ApplicationController
   end
 
   def concerts
+
+    @concerts = Concert.all
+
     respond_to do |format|
       format.html # index.html.erb
     end

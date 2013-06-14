@@ -10,8 +10,8 @@
 <%= f.input :datestart, label: 'Fecha de Inicio' %>
 <%= f.input :dateend, label: 'Fecha de Fin' %>
 <%= f.input :totalscore, label: 'Calificación', :collection => 1..5, :as => :radio %>
-<%= f.input :local, label: 'Local', :collection => Local.all %>
-<%= f.input :group, label: 'Grupo', :collection => Group.all %>
+<%= f.input :local_id, label: 'Local', :collection => Local.all %>
+<%= f.input :group_id, label: 'Grupo', :collection => Group.all %>
 
 <%= f.button :submit, label: 'Crear concierto' %>
 
