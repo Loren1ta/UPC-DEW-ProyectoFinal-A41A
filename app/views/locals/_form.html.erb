@@ -55,5 +55,9 @@
   <%= f.input :address, label: 'Direccion' %>
   <%= f.input :phone, label: 'Telefono' %>
   <%= f.input :description, label: 'Descripcion' %>
+
+  <%= gmaps4rails(@json) %>
+
   <%= f.button :submit , "Registrar" %>
 <% end %>
+

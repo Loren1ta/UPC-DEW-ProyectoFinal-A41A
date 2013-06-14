@@ -36,6 +36,9 @@ class LocalsController < ApplicationController
   # GET /locals/1/edit
   def edit
     @local = Local.find(params[:id])
+
+    @json = Local.all.to_gmaps4rails
+
   end
 
   # POST /locals
