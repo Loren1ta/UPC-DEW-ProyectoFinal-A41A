@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610034456) do
+ActiveRecord::Schema.define(:version => 20130615001430) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20130610034456) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
+    t.string   "ordinal"
+    t.integer  "score"
     t.integer  "user_id"
     t.integer  "concert_id"
     t.datetime "created_at", :null => false
@@ -32,6 +34,14 @@ ActiveRecord::Schema.define(:version => 20130610034456) do
   add_index "comments", ["concert_id"], :name => "index_comments_on_concert_id"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
+  create_table "concert_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "concert_id"
+    t.string   "estate"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "concerts", :force => true do |t|
     t.string   "headline"
     t.text     "description"
@@ -40,9 +50,9 @@ ActiveRecord::Schema.define(:version => 20130610034456) do
     t.integer  "totalscore"
     t.integer  "local_id"
     t.integer  "group_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "estate"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.string   "estate",      :default => "INA"
   end
 
   add_index "concerts", ["group_id"], :name => "index_concerts_on_group_id"
@@ -72,12 +82,12 @@ ActiveRecord::Schema.define(:version => 20130610034456) do
     t.string   "geolocation"
     t.string   "phone"
     t.string   "pictureref"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
-    t.string   "estate"
+    t.string   "estate",      :default => "INA"
   end
 
   create_table "picture_files", :force => true do |t|

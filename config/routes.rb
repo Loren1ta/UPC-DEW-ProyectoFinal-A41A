@@ -6,7 +6,11 @@ Ising::Application.routes.draw do
 
   match "/auth/:provider/callback" => "sessions#create"
 
-  resources :comments
+  match "/ajax/:concertid/comments/" => "comments#add_comment", :via => :post
+  match "/ajax/comments/" => "comments#add_comment", :via => :post
+  match "/ajax/comments/" => "comments#get_comments", :via => :get
+
+  resources :comments 
 
   resources :picture_file do
     member do

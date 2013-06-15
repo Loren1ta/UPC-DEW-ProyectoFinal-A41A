@@ -25,11 +25,7 @@
     <td><%= concert.group.name %></td>
     <td><%= link_to 'Mostrar', concert , class: 'link_button'%></td>
     <td><%= link_to 'Editar', edit_concert_path(concert) , class: 'link_button'%></td>
-    <td>
-      <% if concert.estate == 'ACT' %>
-        <%= link_to 'Cerrar', concert, method: :delete, data: { confirm: 'Está seguro de cerrar el concierto?' } , class: 'link_button'%>
-      <% end %>
-    </td>
+    <td><%= link_to 'Borrar', concert, method: :delete, data: { confirm: 'Está seguro de borrar?' } , class: 'link_button'%></td>
   </tr>
 <% end %>
 </table>
