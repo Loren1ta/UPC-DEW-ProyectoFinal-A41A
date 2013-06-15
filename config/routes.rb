@@ -1,6 +1,9 @@
 Ising::Application.routes.draw do
 
 
+  resources :concert_users
+
+
   match "/auth/:provider/callback" => "sessions#create"
 
   resources :comments
